@@ -1,0 +1,31 @@
+* {
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.view1 {
+    display:grid;
+    margin:10px;
+    gap:1rem;
+    place-content: center;
+    grid-template-columns: repeat(3,minmax(auto,300px));
+}
+
+header {
+    position:sticky;
+    background-color: black;
+    padding:1rem;
+    color:white;
+    text-align: center;
+    font-size: 32px;
+}
+.view {
+   padding:2rem;
+   background-color: black;
+   color:white;
+   display:grid;
+   place-content: center;
+
+}
+
