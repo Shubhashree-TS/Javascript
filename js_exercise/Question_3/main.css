@@ -18,3 +18,12 @@ form {
     margin:auto;
     text-align: center;
 }
+
+.error {
+    color:red;
+}
+
+.helper-text {
+    color:gray;
+
+}

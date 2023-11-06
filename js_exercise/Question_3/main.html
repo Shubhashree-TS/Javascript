@@ -28,11 +28,13 @@ If validation passes, log a success message to the console and reset the form fi
 </head>
 <body>
     <main>
-            <form id="form" onsubmit="event.preventDefault()">
+            <form id="form">
                     <label for="username">Full Name</label>
                     <input type="text" id="username" autocomplete="on">
+                    <p id="username-error" class="helper-text">This field is required</p>
                     <label for="age">Age</label>
                     <input type="number" id="age">
+                    <p id="age-error" class="helper-text">range : 1 - 110</p>
                     <button type="submit" id="submit" >Submit</button>
             </form>
            <div id="error-message" class="message"></div>

@@ -18,26 +18,60 @@ Success:
 
 If validation passes, log a success message to the console and reset the form fields.*/ 
 
-function customError(message) {
-    this.message = message;
-    this.name = "customError";
-    this.stack =`${this.name} : ${this.message}`;
+function customError(username,age) {
+
+    let error = new Error();
+    error.usernameEmpty = false;
+    error.ageInvalid = false;
+    error.ageEmpty = false;
+    console.log(username,age);
+    console.log(`username = ${username}`);
+    if(username == "") {
+        error.usernameEmpty = true;
+    } ;
+    if (!age) {
+        error.ageEmpty = true;
+    } ;
+    if(age > 110 && age < 1 ) {
+        error.ageInvalid = true;
+    } ;
+    if (error.usernameEmpty || error.ageEmpty || error.ageInvalid ) { 
+        console.log(error);
+        throw error};
+
 }// defining the custom error
 
-function validateForm(){
-    let username = document.getElementById("username").value;
-    let age = document.getElementById("age").value;
+function validateForm(e){
+    console.log(e);
+    e.preventDefault();
+    let username = document.getElementById("username").value.trim();
+    let age = parseInt(document.getElementById("age").value.trim());
     try {
-        if(username.trim() == "" && age.trim() == "") {throw new customError("Fill Username and age!")}
-        else if(username.trim() == ""  ) {throw new customError("Fill the Usernamefield!");}
-        else if(age.trim() == "") {throw new customError("Fill the Age field!")}
-        else if (age > 110 || age < 1) {throw new customError("The age should be in the range of 1 and 110");}
-        else {
-            document.getElementById("error-message").innerHTML = "";
-            document.getElementById("success-message").innerHTML ="Form submitted successfully!";
-            document.getElementById("form").reset();}
+        customError(username,age);
+        // if(username.trim() == "" && age.trim() == "") {throw new customError(error.usernameEmpty=true)}
+        // else if(username.trim() == ""  ) {throw new customError("Fill the Usernamefield!");}
+        // else if(age.trim() == "") {throw new customError("Fill the Age field!")}
+        // else if (age > 110 || age < 1) {throw new customError("The age should be in the range of 1 and 110");}
+        // else {
+        //     document.getElementById("error-message").innerHTML = "";
+        //     document.getElementById("success-message").innerHTML ="Form submitted successfully!";
+        //     document.getElementById("form").reset();}
     }
     catch(err){
+        const usernameError = document.getElementById("username-error");
+        const ageError = document.getElementById("age-error");
+        console.log(usernameError,ageError);
+        if(err.usernameEmpty){
+            usernameError.innerText = "Fill the Username field!";
+            usernameError.classList.add("error");
+            usernameError.classList.remove("helper-text");
+        };
+        if(err.ageEmpty) {
+            ageError.innerText = "Fill the Age field!";
+            usernameError.classList.add("error");
+            usernameError.classList.remove("helper-text");
+        };
+        if(err.ageInvalid) ageError.innerText = "The age should be in the range of 1 and 110";
         document.getElementById("error-message").innerHTML = err.message;
         
     }
