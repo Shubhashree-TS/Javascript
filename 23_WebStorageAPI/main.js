@@ -1,8 +1,6 @@
 window.alert("ok!");
 alert("location");
 
-
-
 const myArray = ['eat','sleep','code'];
 
 //local Storage

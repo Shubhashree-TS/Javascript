@@ -1,0 +1,32 @@
+Fetching data from the server
+
+
+Fetch API
+
+
+
+web page (html+[stylesheets, scripts and images])
+browser makes request to the server
+trouble with traditional model: we'd have to fetch and load the entire page, even when we only need to update one part of it. 
+
+JS API is used to request data from the server and update the page content without a page load. 
+
+For data driven sites: 
+Fetch API( enables js running in a page to make an HTTP request)
+DOM manipulation APIs (use this to update the data which is in JSON format)
+
+advantages: site feels faster and more responsive
+            less wasted bandwidth.
+
+EARLY DAYS : Ajax(Asynchronous JavaScript and XML) - request XML data 
+             
+to request our data from database we use : server-side languages (PHP, Python, Node)
+                                           
+entry point of the Fetch API is a global function called fetch()
+fetch() - Asynchronous api which returns promises
+we pass a function into then method of returned promise. 
+
+XMLHttpsRequest: XHR used to make HTTP request.
+                predated fetch,first API widely used to implement AJAX
+                used heavily in AJAX programming
+                

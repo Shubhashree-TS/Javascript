@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Login and Signup Form</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form id="login-form" class="active">
+        <h2>Login</h2>
+        <div class="input-container">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" required>
+          <span class="error" id="login-email-error"></span>
+        </div>
+        <div class="input-container">
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" required>
+          <span class="error" id="login-password-error"></span>
+        </div>
+        <button type="button" id="login-button" onclick="verifyLocalStorage()" disabled>Login</button><!--verification with local storage-->
+        <p >Don't have an account?</p>
+        
+      </form>
+
+      <form id="signup-form">
+        <h2>Sign Up</h2>
+        <div class="input-container">
+          <label for="signup-name">Full Name:</label>
+          <input type="text" id="signup-name" required>
+          <span class="error" id="signup-name-error"></span>
+        </div>
+        <div class="input-container">
+          <label for="signup-phone">Phone Number:</label>
+          <input type="tel" id="signup-phone" pattern="[0-9]{10}" required>
+          <span class="error" id="signup-phone-error"></span>
+        </div>
+        <div class="input-container">
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" required>
+          <span class="error" id="signup-email-error"></span>
+        </div>
+        <div class="input-container">
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" required>
+          <span class="error" id="signup-password-error"></span>
+        </div>
+        <div class="input-container">
+          <label for="signup-confirm-password">Confirm Password:</label>
+          <input type="password" id="signup-confirm-password" required>
+          <span class="error" id="signup-confirm-password-error"></span>
+        </div>
+        <button type="button" id="signup-button" onclick="storingData()"disabled>Sign Up</button><!--storing data in local storage-->
+        <p >Already have an account?</p>
+      </form>
+    </div>
+    <div class="switch-container">
+      <button id="switch-btn" >Switch</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- /*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Storage</title>
+</head>
+<body>
+
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <button type="button" onclick="storeFormData()">Submit</button>
+    </form>
+
+    <script>
+        function storeFormData() {
+            // Get form values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // Create an object to store the form data
+            var formData = {
+                'name': name,
+                'email': email
+            };
+
+            // Convert the object to a JSON string
+            var formDataJSON = JSON.stringify(formData);
+
+            // Store the JSON string in local storage
+            localStorage.setItem('formData', formDataJSON);
+
+            alert('Form data has been stored in local storage.');
+        }
+    </script>
+
+</body>
+</html>
+In this example, the form has two input fields for name and email, and a button that calls the storeFormData function when clicked. The storeFormData function retrieves the values from the form, creates an object with the form data, converts it to a JSON string, and stores it in local storage using localStorage.setItem.
+
+Keep in mind that local storage has some limitations, such as a size limit (typically around 5 MB) and being synchronous, which means it can block the main thread. If you need to store larger amounts of data or require asynchronous storage, you might want to consider other options like IndexedDB.*/
+
+window.location='../Question_4/another.html-->

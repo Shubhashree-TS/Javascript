@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script defer src="form.js"></script>
+</head>
+<body>
+    <h1>Forms
+    </h1>
+
+    <!--SignIn Form-->
+    <!-- <h2>SignIn Form</h2>
+    <form action="#" name="signInForm">
+        <fieldset>
+            <legend>Enter login credentials</legend>
+            <p>
+                <label for="signInEmail">Email</label>
+                <input type="email" name="signInEmail" id="signInEmail" placeholder="Enter your email">
+                <p class="errorMsg"></p>
+            </p>
+            <p>
+                <label for="signInPassword">Password</label>
+                <input type="password" name="signInPassword" id="signInPassword" placeholder="Enter your password">
+                <p class="errorMsg"></p>
+            </p>
+        </fieldset>
+        <p>Dont have any account ? <span> <button>SignUp</button> </span></p>
+    </form> -->
+
+    <!--SignUp Form-->
+    <h2>SignUp Form</h2>
+    <form action="#" name="signUpForm" onclick="return validateSignUpForm()" >
+        <fieldset>
+            <legend>Enter your details</legend>
+            <p >
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname" required autocomplete="on" autofocus placeholder="Enter your name here" max>
+                <p id="fnameError"></p>
+            </p>
+            <p>
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" required autocomplete="on" placeholder="Enter your lastname">
+                <p id="lnameError"></p>
+            </p>
+            <p >
+                <label for="fphone">Phone</label>
+                <input type="phone" name="fphone" id="fphone" pattern="[0-9]{10}" placeholder="Phone number">
+                <p id="fphoneError"></p>
+            </p>
+            <p>
+                <label for="signUpEmail">Email</label>
+                <input type="email" name="signUpEmail" id="signUpEmailPhone" placeholder="email@com">
+                <p id="signUpEmailError"></p>
+            </p>
+            <p>
+                <label for="signUpPassword">Password</label>
+                <input type="password" name="signUpPassword" id="signUpPassword" placeholder="Password" minlength="6" maxlength="12">
+                
+            </p>
+            <p>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+                <p id="confirmPasswordError"></p>
+            </p>
+        </fieldset>
+        <p><button>Register</button></p>
+        
+    </form>
+</body>
+</html>

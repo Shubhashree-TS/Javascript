@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="formValidation.css">
+    <script src="formMain.js"></script>
+    <script src="formValidation.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="LoginAndRegistrationForm">
+            <h1 id="formTitle"></h1>
+                <div id="formSwitchBtn">
+                    <button onclick="ShowLoginForm();" id="ShowLoginBtn" class="active">Login</button>
+                    <button onclick="ShowRegistrationForm();" id="ShowRegistrationForm">Registration</button>
+                </div>
+                <div id="LoginForm">
+                    <form action="#">
+                        <div class="center">
+                            <input type="text" id="LoginEmail" class="input-text" placeholder="Email Address">
+                            <input type="text" id="LoginPassword" class="mt-10 input-text" type="password" placeholder="Password">
+                        </div>
+
+                        <div class="forgot-pass-remember-me mt-10">
+                            <div class="forgot-pass">
+                                <a href="JavaScript:void(0);" id="ForgotPassword" onclick="ShowForgotPasswordForm()">ForgotPassword?</a>
+                            </div>
+                            <div class="remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                        </div>
+
+                        <div class="center mt-20">
+                            <input type="submit" value="login" class="Submit-Btn" id="LoginBtn">
+                        </div>
+                    </form>
+                    <p class="center mt-20 dont-have-account">
+                        Don't have an account?
+                        <a href="JavaScript:void(0);" onclick="ShowRegistrationForm();">Register now</a>
+                    </p>
+                </div>
+                <div id="RegistrationForm">
+                    <form action="#">
+                        <div class="center">
+                            <input type="text" id="RegiName" class="input-text" placeholder="FullName">
+                            <input type="email"
+                            id="RegiEmailAddress" class="input-text mt-10" placeholder="Email Address">
+                            <input type="password" id="RegiConfirmPassword" class="mt-10 input-text" placeholder="Confirm Password"> 
+                        </div>
+                        <div class="center mt-20">
+                            <input type="submit" class="Submit-btn" value="Registration" id="RegistrationBtn">
+                        </div>
+                    </form>
+                    <p class="center mt-20 already-have-account">
+                        Already have an account?
+                        <a href="JavaScript:void(0);" onclick="ShowLoginForm()">Login now</a>
+                    </p>
+                </div>
+                <div id="ForgotPasswordForm">
+                    <form action="#">
+                        <div class="center mt-20">
+                            <input type="email" class="input-text" id="forgotPassEmail" placeholder="Email Address">
+                        </div>
+                        <div class="center mt-20">
+                            <input type="submit" class="Submit-Btn" value="Reset Password" id="PasswordResetBtn">
+                        </div>
+                    </form>
+                    <p class="center mt-20 already-have-account">
+                        Back to the 
+                        <a href="JavaScript:void(0);" onclick="ShowLoginForm()">Login page</a>
+                        <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Registration page</a>
+                    </p>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

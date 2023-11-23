@@ -1,0 +1,72 @@
+Things learned:
+1. let and const are hoisted but its memory is allocated at other place than window which cannot be accessed before initialisation.
+2. Temporal Dead Zone exists until variable is declared and assigned a value.
+3. window.variable OR this.variable will not give value of variable defined using let or const.
+4. We cannot redeclare the same variable with let/const(even with using var the second time).
+5. const variable declaration and initialisation must be done on the same line.
+6. There are three types of error: [1] referenceError {given where variable does not have memory allocation} [2] typeError {given when we change type that is not supposed to be changed} [3] syntaxError {when proper syntax(way of writing a statement) is not used}.
+7. Use const wherever possible followed by let, Use var as little as possible(only if you have to). It helps avoid error.
+8. Initialising variables at the top is good idea, helps shrinks TDZ to zero.
+
+
+
+
+
+To concise things:
+
+0) Lexical environment = EC's Local Memory + Reference to Lexical Environment of its parent.
+
+1) Lexical Environment of its parent is the scope where a function is physically present or defined. So, suppose a function x(), is defined and invoked in the GEC, when function x()'s EC is pushed in the call stack, it stores a reference to its parent's lexical environment i.e. the GEC's memory.
+
+2) Whenever a new Execution Context is pushed in the Call Stack it holds a reference to the Lexical Environment of its parent, i.e. the EC's memory from where it was invoked.
+
+3) Global execution context holds reference to null.
+
+4)  Javascript engine first looks for the variable/function being accessed in the local scope of the function, and if not found, it keeps on searching the lexical environment of its parent until it finds the variable/function being accessed.
+
+5) The mechanism mentioned in point 4 above is called SCOPE CHAIN.
+
+6) If the variable accessed is not found in the Scope Chain, then you will get the variable is not defined error in the  browser's console.
+
+
+
+
+
+Things learned:
+1. Code inside curly bracket is called block.
+2. Multiple statements are grouped inside a block so it can be written where JS expects single statements like in if, else, loop, function etc.
+3. Block values are stored inside separate memory than global. They are stored in block. (the reason let and const are called block scope)
+4. Shadowing of variables using var, let and const.
+5. The shadow should not cross the scope of original otherwise it will give error.
+6. shadowing let with var is illegal shadowing and gives error.
+7. var value is stored in nearest outer function or global scope and hence can be accessed outside block as well whereas same is not the case with let and const.
+
+
+
+
+The code inside a function has access to:
+
+the function’s arguments.
+local variables declared inside the function.
+variables declared in its parent function’s scope.
+global variables.
+
+
+
+
+https://www.geeksforgeeks.org/all-about-functions-and-scopes-in-javascript/  all about functions 
+
+
+Function scope and block Scope:
+
+Function Scope: When a variable is declared inside a function, it is only accessible within that function and cannot be used outside that function.
+
+Block Scope: A variable when declared inside the if or switch conditions or inside for or while loops, are accessible within that particular condition or loop. To be consise the variables declared inside the curly braces are called as within block scope.
+
+Coming back to the use of keywords,
+var is called as function scope that is if a variable is declared using var keyword it will be accessible throughout the function.
+
+let & const are also called as block scope that is they are accessible within that particular block. Here let is used for variable which can be changed as we proceed through the program whereas const is used for a variable which doesn’t change till the program ends, that is it remains constant throughout the program.
+
+
+

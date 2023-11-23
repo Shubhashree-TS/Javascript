@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Question_4"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "login and registration"
+	}
+}

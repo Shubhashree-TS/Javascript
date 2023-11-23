@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../js_exercise/Question_2"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "js_course"
+	}
+}

@@ -4,4 +4,7 @@ export default class User {
         this._name = name;
 
     }
+    greeting(){
+        return `Hi,my name is ${this._name} `;
+    }
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Posts and Comments</title>
+    <link rel="stylesheet" href="another.css">
+    <link rel="stylesheet" href="main.css">
+    <script>
+      console.log(localStorage.getItem('isLoggedIn') === null);
+      if( localStorage.getItem('isLoggedIn') === null || localStorage.getItem('isLoggedIn') === 'false'){
+        window.location = '../final/form.html';
+      }
+    </script>
+    
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Posts</h1>
+      <button type="button" onclick="logout()">Logout</button>
+    </div>
+    
+    <div id="posts-container"></div>
+    <div>
+      
+    </div>
+    <script src="another.js" defer > </script>
+    
+  </body>
+</html>
+
+
+ 
