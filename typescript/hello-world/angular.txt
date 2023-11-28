@@ -1,0 +1,37 @@
+ng build
+ng serve
+ng generate
+ng test
+ng e2e 
+ng new
+
+
+ng build
+Compiles an Angular application or library into an output directory named dist/ at the given output path.
+ng build [project]
+ng b [project]
+
+ng serve
+Builds and serves your application, rebuilding on file changes.
+ng serve [project]
+ng s [project]
+
+ng generate
+Generates and/or modifies files based on a schematic.
+ng generate <schematic>
+ng g <schematic>
+
+ng test
+Runs unit tests in a project.
+ng test [project]
+ng t [project]
+
+ng e2e
+Builds and serves an Angular application, then runs end-to-end tests.
+ng e2e [project]
+ng e [project]
+
+ng new
+Creates a new Angular workspace.
+ng new [name]
+ng n [name]
